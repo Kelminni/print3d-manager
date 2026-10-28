@@ -16,8 +16,8 @@ A quote and order management system for a 3D printing business that offers custo
 ## Roadmap
 
 - [x] Order summary with typed variables
-- [ ] v0.1: quote calculation (material, machine time, painting and profit margin)
-- [ ] v0.2: different pricing rules for filament and resin
+- [x] v0.1: quote calculation (material, machine time, painting and profit margin)
+- [ ] v0.2: different pricing rules for filament and resin, and prices formatted with 2 decimals
 - [ ] v0.3: orders with multiple parts
 - [ ] v0.4: order list with status tracking (received, quoted, approved, printing, post-processing, painting, ready, delivered)
 - [ ] v0.5: object-oriented design (Customer, Order, Part, Material)
