@@ -6,12 +6,13 @@ A quote and order management system for a 3D printing business that offers custo
 
 ## Why
 
-
+My brother runs a small 3D printing business that makes custom parts in filament and resin, some of them painted by hand. He needs a more organized way to take on new customers without losing the close contact he has with each one. This project collects the order details and calculates the quote before anything goes to the printer, so both he and the customer know what will be printed and how much it will cost.
 
 ## Features
 
 - Collects the order details: customer name, model file, printing technology (filament or resin), material, amount of material, print time and painting option.
-- Prints an order summary with the status "awaiting quote".
+- Calculates the quote from the material cost, machine time, painting time and profit margin.
+- Prints an order summary and a price breakdown.
 
 ## Roadmap
 
