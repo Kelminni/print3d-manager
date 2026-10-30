@@ -25,18 +25,21 @@ public class Print3dManager {
 
         System.out.println("Com pintura? (true/false)");
         boolean needsPainting = Boolean.valueOf(scanner.nextLine());
+        double paintingHours = 0;
+        double paintingHourRate = 0;
 
+        if (needsPainting) {
+            System.out.println("Horas de pintura:");
+            paintingHours = Double.valueOf(scanner.nextLine());
+
+            System.out.println("Valor da hora de pintura (R$):");
+            paintingHourRate = Double.valueOf(scanner.nextLine());
+        }
         System.out.println("Preço do material (R$ por kg ou por litro):");
         double materialPrice = Double.valueOf(scanner.nextLine());
 
         System.out.println("Valor da hora de máquina (R$):");
         double machineHourRate = Double.valueOf(scanner.nextLine());
-
-        System.out.println("Horas de pintura (0 se não tiver pintura):");
-        double paintingHours = Double.valueOf(scanner.nextLine());
-
-        System.out.println("Valor da hora de pintura (R$):");
-        double paintingHourRate = Double.valueOf(scanner.nextLine());
 
         System.out.println("Margem de lucro (%):");
         int profitMargin = Integer.valueOf(scanner.nextLine());
@@ -53,18 +56,19 @@ public class Print3dManager {
         System.out.println("Status: orçamento calculado");
 
         // amount in grams (filament) or ml (resin); price per kg or per liter
-        double materialCost = materialAmount * materialPrice / 1000; 
+        double materialCost = materialAmount * materialPrice / 1000;
         double machineCost = printHours * machineHourRate;
         double paintingCost = paintingHours * paintingHourRate;
         double totalCost = materialCost + machineCost + paintingCost;
         double finalPrice = totalCost * (1 + profitMargin / 100.0);
-        
-        
+
         System.out.println();
         System.out.println("--- Orçamento ---");
         System.out.println("Material: R$ " + materialCost);
         System.out.println("Máquina: R$ " + machineCost);
-        System.out.println("Pintura: R$ " + paintingCost);
+        if (needsPainting) {
+            System.out.println("Pintura: R$ " + paintingCost);
+        }
         System.out.println("Custo total: R$ " + totalCost);
         System.out.println("Margem: " + profitMargin + "%");
         System.out.println("Preço final: R$ " + finalPrice);
