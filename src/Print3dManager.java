@@ -14,8 +14,11 @@ public class Print3dManager {
         System.out.println("Tecnologia (Filamento ou Resina):");
         String technology = scanner.nextLine();
 
-        System.out.println("Material:");
-        String material = scanner.nextLine();
+        String material = "Resina"; // default material for resin
+        if (technology.equalsIgnoreCase("Filamento")) {
+            System.out.println("Escolha o material: PLA, ABS, PETG ou TPU");
+            material = scanner.nextLine();
+        }
 
         System.out.println("Quantidade de material (g para filamento, ml para resina):");
         double materialAmount = Double.valueOf(scanner.nextLine());
