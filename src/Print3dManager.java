@@ -14,13 +14,24 @@ public class Print3dManager {
         System.out.println("Tecnologia (Filamento ou Resina):");
         String technology = scanner.nextLine();
 
-        String material = "Resina"; // default material for resin
+        String material;
+        String unit;
+        String priceUnit;
         if (technology.equalsIgnoreCase("Filamento")) {
             System.out.println("Escolha o material: PLA, ABS, PETG ou TPU");
             material = scanner.nextLine();
+            unit = "g";
+            priceUnit = "kg";
+        } else if (technology.equalsIgnoreCase("Resina")) {
+            material = "Resina";
+            unit = "ml";
+            priceUnit = "litro";
+        } else {
+            System.out.println("Tecnologia inválida. Use Filamento ou Resina.");
+            return;
         }
 
-        System.out.println("Quantidade de material (g para filamento, ml para resina):");
+        System.out.println("Quantidade de material (" + unit + "):");
         double materialAmount = Double.valueOf(scanner.nextLine());
 
         System.out.println("Tempo de impressão (horas):");
@@ -40,7 +51,7 @@ public class Print3dManager {
             paintingHourRate = Double.valueOf(scanner.nextLine());
         }
 
-        System.out.println("Preço do material (R$ por kg ou por litro):");
+        System.out.println("Preço do material (R$ por " + priceUnit + ")");
         double materialPrice = Double.valueOf(scanner.nextLine());
 
         System.out.println("Valor da hora de máquina (R$):");
@@ -55,7 +66,7 @@ public class Print3dManager {
         System.out.println("Modelo: " + modelFile);
         System.out.println("Tecnologia: " + technology);
         System.out.println("Material: " + material);
-        System.out.println("Quantidade de material: " + materialAmount);
+        System.out.println("Quantidade de material: " + materialAmount + " " + unit);
         System.out.println("Tempo de impressão: " + printHours + " h");
         System.out.println("Pintura: " + needsPainting);
         System.out.println("Status: orçamento calculado");
