@@ -32,10 +32,10 @@ public class Print3dManager {
         }
 
         System.out.println("Quantidade de material (" + unit + "):");
-        double materialAmount = Double.valueOf(scanner.nextLine());
+        double materialAmount = Double.valueOf(scanner.nextLine().replace(",", "."));
 
         System.out.println("Tempo de impressão (horas):");
-        double printHours = Double.valueOf(scanner.nextLine());
+        double printHours = Double.valueOf(scanner.nextLine().replace(",", "."));
 
         System.out.println("Com pintura? (sim/não)");
         String paintingAnswer = scanner.nextLine();
@@ -46,17 +46,17 @@ public class Print3dManager {
 
         if (needsPainting) {
             System.out.println("Horas de pintura:");
-            paintingHours = Double.valueOf(scanner.nextLine());
+            paintingHours = Double.valueOf(scanner.nextLine().replace(",", "."));
 
             System.out.println("Valor da hora de pintura (R$):");
-            paintingHourRate = Double.valueOf(scanner.nextLine());
+            paintingHourRate = Double.valueOf(scanner.nextLine().replace(",", "."));
         }
 
         System.out.println("Preço do material (R$ por " + priceUnit + "):");
-        double materialPrice = Double.valueOf(scanner.nextLine());
+        double materialPrice = Double.valueOf(scanner.nextLine().replace(",", "."));
 
         System.out.println("Valor da hora de máquina (R$):");
-        double machineHourRate = Double.valueOf(scanner.nextLine());
+        double machineHourRate = Double.valueOf(scanner.nextLine().replace(",", "."));
 
         System.out.println("Margem de lucro (%):");
         int profitMargin = Integer.valueOf(scanner.nextLine());
@@ -87,7 +87,7 @@ public class Print3dManager {
         System.out.println("--- Orçamento ---");
         System.out.println("Material: R$ " + materialCost);
         System.out.println("Máquina: R$ " + machineCost);
-        
+
         if (needsPainting) {
             System.out.println("Pintura: R$ " + paintingCost);
         }
