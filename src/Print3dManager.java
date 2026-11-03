@@ -37,8 +37,9 @@ public class Print3dManager {
         System.out.println("Tempo de impressão (horas):");
         double printHours = Double.valueOf(scanner.nextLine());
 
-        System.out.println("Com pintura? (true/false)");
-        boolean needsPainting = Boolean.valueOf(scanner.nextLine());
+        System.out.println("Com pintura? (sim/não)");
+        String paintingAnswer = scanner.nextLine();
+        boolean needsPainting = paintingAnswer.equalsIgnoreCase("sim");
 
         double paintingHours = 0;
         double paintingHourRate = 0;
@@ -51,7 +52,7 @@ public class Print3dManager {
             paintingHourRate = Double.valueOf(scanner.nextLine());
         }
 
-        System.out.println("Preço do material (R$ por " + priceUnit + ")");
+        System.out.println("Preço do material (R$ por " + priceUnit + "):");
         double materialPrice = Double.valueOf(scanner.nextLine());
 
         System.out.println("Valor da hora de máquina (R$):");
@@ -68,7 +69,11 @@ public class Print3dManager {
         System.out.println("Material: " + material);
         System.out.println("Quantidade de material: " + materialAmount + " " + unit);
         System.out.println("Tempo de impressão: " + printHours + " h");
-        System.out.println("Pintura: " + needsPainting);
+        if (needsPainting) {
+            System.out.println("Pintura: Sim");
+        } else {
+            System.out.println("Pintura: Não");
+        }
         System.out.println("Status: orçamento calculado");
 
         // amount in grams (filament) or ml (resin); price per kg or per liter
