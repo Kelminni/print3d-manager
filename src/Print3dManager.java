@@ -11,24 +11,29 @@ public class Print3dManager {
         System.out.println("Arquivo do modelo:");
         String modelFile = scanner.nextLine();
 
-        System.out.println("Tecnologia (Filamento ou Resina):");
-        String technology = scanner.nextLine();
-
+        String technology;
         String material;
         String unit;
         String priceUnit;
-        if (technology.equalsIgnoreCase("Filamento")) {
-            System.out.println("Escolha o material: PLA, ABS, PETG ou TPU");
-            material = scanner.nextLine();
-            unit = "g";
-            priceUnit = "kg";
-        } else if (technology.equalsIgnoreCase("Resina")) {
-            material = "Resina";
-            unit = "ml";
-            priceUnit = "litro";
-        } else {
-            System.out.println("Tecnologia inválida. Use Filamento ou Resina.");
-            return;
+
+        while (true) {
+            System.out.println("Tecnologia (Filamento ou Resina):");
+            technology = scanner.nextLine();
+
+            if (technology.equalsIgnoreCase("Filamento")) {
+                System.out.println("Escolha o material: PLA, ABS, PETG ou TPU");
+                material = scanner.nextLine();
+                unit = "g";
+                priceUnit = "kg";
+                break;
+            } else if (technology.equalsIgnoreCase("Resina")) {
+                material = "Resina";
+                unit = "ml";
+                priceUnit = "litro";
+                break;
+            } else {
+                System.out.println("Tecnologia inválida. Use Filamento ou Resina.");
+            }
         }
 
         System.out.println("Quantidade de material (" + unit + "):");
