@@ -90,15 +90,15 @@ public class Print3dManager {
 
         System.out.println();
         System.out.println("--- Orçamento ---");
-        System.out.println("Material: R$ " + materialCost);
-        System.out.println("Máquina: R$ " + machineCost);
+        System.out.println("Material: R$ " + String.format("%.2f", materialCost));
+        System.out.println("Máquina: R$ " + String.format("%.2f", machineCost));
 
         if (needsPainting) {
-            System.out.println("Pintura: R$ " + paintingCost);
+            System.out.println("Pintura: R$ " + String.format("%.2f", paintingCost));
         }
 
-        System.out.println("Custo total: R$ " + totalCost);
+        System.out.println("Custo total: R$ " + String.format("%.2f", totalCost));
         System.out.println("Margem: " + profitMargin + "%");
-        System.out.println("Preço final: R$ " + finalPrice);
+        System.out.println("Preço final: R$ " + String.format("%.2f", finalPrice));
     }
 }
