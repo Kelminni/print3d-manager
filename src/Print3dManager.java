@@ -43,9 +43,15 @@ public class Print3dManager {
                 System.out.println("Tecnologia inválida. Use Filamento ou Resina.");
             }
         }
-
-        System.out.println("Quantidade de material (" + unit + "):");
-        double materialAmount = Double.valueOf(scanner.nextLine().replace(",", "."));
+        while (true) {
+            System.out.println("Quantidade de material (" + unit + "):");
+            double materialAmount = Double.valueOf(scanner.nextLine().replace(",", "."));
+            if (materialAmount > 0) {
+                break;
+            } else if (materialAmount <= 0) {
+                System.out.println("Quantidade inválida. Use um valor maior que 0.");
+            }
+        }
 
         System.out.println("Tempo de impressão (horas):");
         double printHours = Double.valueOf(scanner.nextLine().replace(",", "."));
