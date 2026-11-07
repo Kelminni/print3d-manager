@@ -21,10 +21,18 @@ public class Print3dManager {
             technology = scanner.nextLine();
 
             if (technology.equalsIgnoreCase("Filamento")) {
-                System.out.println("Escolha o material: PLA, ABS, PETG ou TPU");
-                material = scanner.nextLine();
-                unit = "g";
-                priceUnit = "kg";
+                while (true) {
+                    System.out.println("Escolha o material: PLA, ABS, PETG ou TPU");
+                    material = scanner.nextLine();
+                    if (material.equalsIgnoreCase("PLA") || material.equalsIgnoreCase("ABS") 
+                        || material.equalsIgnoreCase("PETG") || material.equalsIgnoreCase("TPU")) {
+                        unit = "g";
+                        priceUnit = "kg";
+                        break;
+                    } else {
+                        System.out.println("Material inválido. Use PLA, ABS, PETG ou TPU.");
+                    }
+                }
                 break;
             } else if (technology.equalsIgnoreCase("Resina")) {
                 material = "Resina";
