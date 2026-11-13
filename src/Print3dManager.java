@@ -15,7 +15,6 @@ public class Print3dManager {
         String material;
         String unit;
         String priceUnit;
-
         while (true) {
             System.out.println("Tecnologia (Filamento ou Resina):");
             technology = scanner.nextLine();
@@ -43,9 +42,11 @@ public class Print3dManager {
                 System.out.println("Tecnologia inválida. Use Filamento ou Resina.");
             }
         }
+        
+        double materialAmount = 0;
         while (true) {
             System.out.println("Quantidade de material (" + unit + "):");
-            double materialAmount = Double.valueOf(scanner.nextLine().replace(",", "."));
+            materialAmount = Double.valueOf(scanner.nextLine().replace(",", "."));
             if (materialAmount > 0) {
                 break;
             } else if (materialAmount <= 0) {
